@@ -18,7 +18,9 @@ namespace RoyalLibraryApi.Repository
                     book.First_Name.ToLower().Contains(value.ToLower()) ||
                     book.Last_Name.ToLower().Contains(value.ToLower()) ||
                     book.Title.ToLower().Contains(value.ToLower()) ||
-                    (book.Category != null && book.Category.ToLower().Contains(value.ToLower()))
+                    book.Title.ToLower().Contains(value.ToLower()) ||
+                    (book.Category != null && book.Category.ToLower().Contains(value.ToLower())) ||
+                    (book.Type != null && book.Type.ToLower().Contains(value.ToLower()))
                     ).ToListAsync();
         }
 
